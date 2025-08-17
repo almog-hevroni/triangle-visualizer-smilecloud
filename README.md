@@ -1,46 +1,139 @@
-# Getting Started with Create React App
+# 🔺 Triangle Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+פרויקט ויזואליזציה של משולש עם חישוב זוויות - משימת מיון ל-SmileCloud
 
-## Available Scripts
+## 🚀 הרצת הפרויקט
 
-In the project directory, you can run:
+```bash
+# התקנת חבילות
+npm install
 
-### `npm start`
+# הרצה בסביבת פיתוח
+npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# בניית גרסת production
+npm build
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+הפרויקט ירוץ על [http://localhost:3000](http://localhost:3000)
 
-### `npm test`
+## 📁 מבנה הפרויקט
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+triangle-visualizer/
+├── src/
+│   ├── components/          # React Components
+│   │   ├── InputPage.tsx    # עמוד הקלט
+│   │   ├── DisplayPage.tsx  # עמוד התצוגה
+│   │   ├── TriangleCanvas.tsx # קנבס ה-SVG
+│   │   └── AngleSummary.tsx # סיכום הזוויות
+│   ├── utils/
+│   │   └── mathUtils.ts     # פונקציות מתמטיות
+│   ├── types/
+│   │   └── index.ts         # TypeScript interfaces
+│   ├── App.tsx              # קומפוננטה ראשית
+│   ├── index.tsx            # Entry point
+│   └── index.css            # סגנונות ו-Tailwind
+├── package.json
+├── tailwind.config.js
+└── README.md
+```
 
-### `npm run build`
+## 🛠 טכנולוגיות
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React 18** עם **TypeScript** - למבנה type-safe ומודרני
+- **Tailwind CSS** - לעיצוב מהיר ומקצועי
+- **SVG** - לגרפיקה וקטורית מדויקת
+- **Lucide Icons** - לאייקונים מודרניים
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📊 תשובות למשימה
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. באיזו שיטה השתמשתי לציור המשולש?
 
-### `npm run eject`
+השתמשתי ב-**SVG (Scalable Vector Graphics)** עם React components מודולריות:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **SVG polygon** - לציור המשולש עצמו
+- **SVG path עם Arc commands** - לציור קשתות הזוויות
+- **SVG circles ו-text** - לסימון הנקודות
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**למה בחרתי בשיטה זו:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- דיוק מתמטי מושלם בעבודה עם קואורדינטות
+- ביצועים מעולים ורנדור חלק
+- תמיכה מלאה באנימציות CSS
+- קלות בהוספת אלמנטים גרפיים כמו grid ו-gradients
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 2. כיצד חישבתי את ערך הזוויות?
 
-## Learn More
+השתמשתי בשיטת **וקטורים ומכפלה סקלרית**:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```typescript
+// יצירת וקטורים מהקודקוד לנקודות
+const v1 = { x: p1.x - vertex.x, y: p1.y - vertex.y };
+const v2 = { x: p2.x - vertex.x, y: p2.y - vertex.y };
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+// מכפלה סקלרית ודטרמיננטה
+const dot = v1.x * v2.x + v1.y * v2.y;
+const det = v1.x * v2.y - v1.y * v2.x;
+
+// חישוב הזווית עם atan2
+let angle = Math.atan2(det, dot) * (180 / Math.PI);
+```
+
+השיטה מדויקת ומטפלת נכון בכל סוגי הזוויות (חדות, קהות, ישרות).
+
+### 3. מה היה מאתגר בתרגיל?
+
+- **ארכיטקטורה מודולרית**: חלוקה נכונה לקומפוננטות עם separation of concerns
+- **חישובי SVG מדויקים**: יצירת paths לקשתות עם הפרמטרים הנכונים
+- **עיצוב UX/UI מרשים**: יצירת חוויית משתמש חלקה עם אנימציות ומשוב ויזואלי
+- **TypeScript typing**: הגדרת interfaces נכונות לכל הנתונים
+
+### 4. האם יש משהו שלא הצלחתי לפתור?
+
+הפתרון מלא ועובד מצוין! הוספתי גם:
+
+- ✅ ולידציה שהנקודות יוצרות משולש תקין
+- ✅ אנימציות חלקות במעברים
+- ✅ תצוגת סכום הזוויות (180°)
+- ✅ עיצוב responsive
+
+אם היה לי יותר זמן, הייתי מוסיף:
+
+- תמיכה במובייל עם touch events
+- אפשרות לגרור נקודות ב-canvas
+- חישוב אורכי צלעות וסוג המשולש
+- export ל-PNG/SVG
+
+### 5. האם השתמשתי בעזרים חיצוניים?
+
+**כן, השתמשתי ב:**
+
+- **AI (Claude)** - לסיוע בארכיטקטורה, אופטימיזציה וbest practices
+- **MDN Documentation** - לתיעוד SVG paths
+- **React Docs** - לבדיקת Hooks ו-patterns
+- **Tailwind Docs** - לעיצוב מהיר
+
+**איך ה-AI עזר:**
+
+- תכנון מבנה הפרויקט המודולרי
+- אופטימיזציה של החישובים המתמטיים
+- יצירת עיצוב מודרני ומרשים
+- כתיבת קוד נקי עם TypeScript
+
+## ✨ תכונות מיוחדות
+
+- 🎨 **עיצוב מודרני** - UI מרשים עם gradients ואנימציות
+- 🔢 **TypeScript** - Type safety וטעויות קומפילציה
+- 📐 **דיוק מתמטי** - חישובים מדויקים עם וקטורים
+- 🎯 **קוד מודולרי** - קומפוננטות נפרדות וutils
+- ⚡ **ביצועים** - רנדור יעיל עם SVG
+- 🛡️ **ולידציות** - בדיקת תקינות המשולש
+
+## 👨‍💻 מחבר
+
+פותח עבור משימת מיון ב-SmileCloud - Full-Stack Developer Position
+
+---
+
+**הערה:** הפרויקט פותח תוך שעה וחצי כנדרש במשימה, עם דגש על קוד איכותי, עיצוב מרשים וחשיבה טכנית מעמיקה.
