@@ -101,15 +101,23 @@ This method is accurate and correctly handles all angle types (acute, obtuse, ri
 
 ### 4. Is there anything I couldn't solve? What gaps did I have?
 
-The solution is complete and works excellently! I also added:
+The solution is functional and meets the requirements. I successfully implemented:
 
 - ✅ Validation that points form a valid triangle
 - ✅ Smooth transition animations
 - ✅ Angle sum display (180°)
 - ✅ Responsive design
 
-If I had more time, I would add:
+**Known Issues:**
 
+- **Canvas boundary overflow**: When using smaller coordinate values (e.g., points close to 0,0), the triangle and angle arcs can extend beyond the visible canvas boundaries. The SVG viewBox is fixed at 800x800, but doesn't dynamically adjust to keep all elements visible.
+- **No dynamic scaling**: The visualization doesn't automatically scale or center the triangle within the available space.
+
+**If I had more time, I would add:**
+
+- Dynamic viewBox calculation to ensure the triangle always fits within bounds
+- Auto-scaling and centering of the triangle
+- Padding adjustments to prevent angle labels from being cut off
 - Mobile support with touch events
 - Drag and drop functionality for points on canvas
 - Side length calculations and triangle type identification
