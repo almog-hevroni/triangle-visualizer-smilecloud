@@ -4,7 +4,7 @@
 
 ## 🌐 **צפייה ישירה באפליקציה**
 
-### **[👉 לחצו כאן לצפייה באפליקציה](https://YOUR_USERNAME.github.io/triangle-visualizer-smilecloud)**
+### **[👉 לחצו כאן לצפייה באפליקציה](https://almog-hevroni.github.io/triangle-visualizer-smilecloud)**
 
 ---
 
