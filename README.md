@@ -32,7 +32,14 @@ The application will run on [http://localhost:3000](http://localhost:3000)
 
 ## 📸 **Preview**
 
-![Triangle Visualizer Demo](./demo.png)
+### Input Page
+
+![Input Page](./screenshots/input_page.png)
+
+### Display Page
+
+![Display Page](./screenshots/displaypage_1.png)
+![Display Page with Angles](./screenshots/displaypage_2.png)
 
 ## ✨ **Features**
 
