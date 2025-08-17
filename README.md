@@ -2,51 +2,54 @@
 
 פרויקט ויזואליזציה של משולש עם חישוב זוויות - משימת מיון ל-SmileCloud
 
-## 🚀 הרצת הפרויקט
+## 🌐 **צפייה ישירה באפליקציה**
+
+### **[👉 לחצו כאן לצפייה באפליקציה](https://YOUR_USERNAME.github.io/triangle-visualizer-smilecloud)**
+
+---
+
+## 🚀 **הרצה מקומית (אופציונלי)**
+
+אם ברצונכם להריץ את הפרויקט באופן מקומי:
 
 ```bash
-# התקנת חבילות
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/triangle-visualizer-smilecloud.git
+
+# 2. Navigate to project
+cd triangle-visualizer-smilecloud
+
+# 3. Install dependencies
 npm install
 
-# הרצה בסביבת פיתוח
+# 4. Start the application
 npm start
-
-# בניית גרסת production
-npm build
 ```
 
-הפרויקט ירוץ על [http://localhost:3000](http://localhost:3000)
+האפליקציה תרוץ על [http://localhost:3000](http://localhost:3000)
 
-## 📁 מבנה הפרויקט
+---
 
-```
-triangle-visualizer/
-├── src/
-│   ├── components/          # React Components
-│   │   ├── InputPage.tsx    # עמוד הקלט
-│   │   ├── DisplayPage.tsx  # עמוד התצוגה
-│   │   ├── TriangleCanvas.tsx # קנבס ה-SVG
-│   │   └── AngleSummary.tsx # סיכום הזוויות
-│   ├── utils/
-│   │   └── mathUtils.ts     # פונקציות מתמטיות
-│   ├── types/
-│   │   └── index.ts         # TypeScript interfaces
-│   ├── App.tsx              # קומפוננטה ראשית
-│   ├── index.tsx            # Entry point
-│   └── index.css            # סגנונות ו-Tailwind
-├── package.json
-├── tailwind.config.js
-└── README.md
-```
+## 📸 **תצוגה מקדימה**
 
-## 🛠 טכנולוגיות
+![Triangle Visualizer Demo](./demo.png)
 
-- **React 18** עם **TypeScript** - למבנה type-safe ומודרני
-- **Tailwind CSS** - לעיצוב מהיר ומקצועי
-- **SVG** - לגרפיקה וקטורית מדויקת
-- **Lucide Icons** - לאייקונים מודרניים
+## ✨ **תכונות**
 
-## 📊 תשובות למשימה
+- ✅ **ממשק קלט אינטואיטיבי** - הזנת 3 נקודות עם ולידציה
+- ✅ **ויזואליזציה מדויקת** - ציור המשולש ב-SVG
+- ✅ **חישוב זוויות** - חישוב מתמטי מדויק עם וקטורים
+- ✅ **עיצוב מודרני** - UI מרשים עם אנימציות
+- ✅ **TypeScript** - Type safety וקוד איכותי
+
+## 🛠 **טכנולוגיות**
+
+- React 18 + TypeScript
+- Tailwind CSS
+- SVG Graphics
+- Lucide Icons
+
+## 📊 **תשובות למשימה**
 
 ### 1. באיזו שיטה השתמשתי לציור המשולש?
 
@@ -121,19 +124,14 @@ let angle = Math.atan2(det, dot) * (180 / Math.PI);
 - יצירת עיצוב מודרני ומרשים
 - כתיבת קוד נקי עם TypeScript
 
-## ✨ תכונות מיוחדות
+---
 
-- 🎨 **עיצוב מודרני** - UI מרשים עם gradients ואנימציות
-- 🔢 **TypeScript** - Type safety וטעויות קומפילציה
-- 📐 **דיוק מתמטי** - חישובים מדויקים עם וקטורים
-- 🎯 **קוד מודולרי** - קומפוננטות נפרדות וutils
-- ⚡ **ביצועים** - רנדור יעיל עם SVG
-- 🛡️ **ולידציות** - בדיקת תקינות המשולש
-
-## 👨‍💻 מחבר
+## 👨‍💻 **מחבר**
 
 פותח עבור משימת מיון ב-SmileCloud - Full-Stack Developer Position
 
+**זמן פיתוח:** שעה וחצי (כנדרש במשימה)
+
 ---
 
-**הערה:** הפרויקט פותח תוך שעה וחצי כנדרש במשימה, עם דגש על קוד איכותי, עיצוב מרשים וחשיבה טכנית מעמיקה.
+💡 **הערה:** האפליקציה זמינה לצפייה ישירה בלינק למעלה, ללא צורך בהתקנה או הרצה מקומית.
