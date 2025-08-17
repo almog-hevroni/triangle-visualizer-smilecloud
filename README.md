@@ -1,22 +1,22 @@
 # 🔺 Triangle Visualizer
 
-פרויקט ויזואליזציה של משולש עם חישוב זוויות - משימת מיון ל-SmileCloud
+Triangle visualization project with angle calculations - SmileCloud recruitment assignment
 
-## 🌐 **צפייה ישירה באפליקציה**
+## 🌐 **Live Demo**
 
-### **[👉 לחצו כאן לצפייה באפליקציה](https://almog-hevroni.github.io/triangle-visualizer-smilecloud)**
+### **[👉 Click here to view the application](https://almog-hevroni.github.io/triangle-visualizer-smilecloud)**
 
 ---
 
-## 🚀 **הרצה מקומית (אופציונלי)**
+## 🚀 **Local Installation (Optional)**
 
-אם ברצונכם להריץ את הפרויקט באופן מקומי:
+To run the project locally:
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/YOUR_USERNAME/triangle-visualizer-smilecloud.git
 
-# 2. Navigate to project
+# 2. Navigate to project directory
 cd triangle-visualizer-smilecloud
 
 # 3. Install dependencies
@@ -26,112 +26,112 @@ npm install
 npm start
 ```
 
-האפליקציה תרוץ על [http://localhost:3000](http://localhost:3000)
+The application will run on [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📸 **תצוגה מקדימה**
+## 📸 **Preview**
 
 ![Triangle Visualizer Demo](./demo.png)
 
-## ✨ **תכונות**
+## ✨ **Features**
 
-- ✅ **ממשק קלט אינטואיטיבי** - הזנת 3 נקודות עם ולידציה
-- ✅ **ויזואליזציה מדויקת** - ציור המשולש ב-SVG
-- ✅ **חישוב זוויות** - חישוב מתמטי מדויק עם וקטורים
-- ✅ **עיצוב מודרני** - UI מרשים עם אנימציות
-- ✅ **TypeScript** - Type safety וקוד איכותי
+- ✅ **Intuitive Input Interface** - Enter 3 points with validation
+- ✅ **Accurate Visualization** - Triangle rendering with SVG
+- ✅ **Angle Calculations** - Precise mathematical calculations using vectors
+- ✅ **Modern Design** - Impressive UI with animations
+- ✅ **TypeScript** - Type safety and quality code
 
-## 🛠 **טכנולוגיות**
+## 🛠 **Technologies**
 
 - React 18 + TypeScript
 - Tailwind CSS
 - SVG Graphics
 - Lucide Icons
 
-## 📊 **תשובות למשימה**
+## 📊 **Assignment Answers**
 
-### 1. באיזו שיטה השתמשתי לציור המשולש?
+### 1. Which method did I use to draw the triangle? Why did I choose it?
 
-השתמשתי ב-**SVG (Scalable Vector Graphics)** עם React components מודולריות:
+I used **SVG (Scalable Vector Graphics)** with modular React components:
 
-- **SVG polygon** - לציור המשולש עצמו
-- **SVG path עם Arc commands** - לציור קשתות הזוויות
-- **SVG circles ו-text** - לסימון הנקודות
+- **SVG polygon** - for drawing the triangle itself
+- **SVG path with Arc commands** - for drawing angle arcs
+- **SVG circles and text** - for marking points
 
-**למה בחרתי בשיטה זו:**
+**Why I chose this method:**
 
-- דיוק מתמטי מושלם בעבודה עם קואורדינטות
-- ביצועים מעולים ורנדור חלק
-- תמיכה מלאה באנימציות CSS
-- קלות בהוספת אלמנטים גרפיים כמו grid ו-gradients
+- Perfect mathematical precision when working with coordinates
+- Excellent performance and smooth rendering
+- Full support for CSS animations
+- Easy to add graphical elements like grids and gradients
 
-### 2. כיצד חישבתי את ערך הזוויות?
+### 2. How did I calculate the angle values?
 
-השתמשתי בשיטת **וקטורים ומכפלה סקלרית**:
+I used the **vector dot product method**:
 
 ```typescript
-// יצירת וקטורים מהקודקוד לנקודות
+// Create vectors from vertex to points
 const v1 = { x: p1.x - vertex.x, y: p1.y - vertex.y };
 const v2 = { x: p2.x - vertex.x, y: p2.y - vertex.y };
 
-// מכפלה סקלרית ודטרמיננטה
+// Calculate dot product and determinant
 const dot = v1.x * v2.x + v1.y * v2.y;
 const det = v1.x * v2.y - v1.y * v2.x;
 
-// חישוב הזווית עם atan2
+// Calculate angle using atan2
 let angle = Math.atan2(det, dot) * (180 / Math.PI);
 ```
 
-השיטה מדויקת ומטפלת נכון בכל סוגי הזוויות (חדות, קהות, ישרות).
+This method is accurate and correctly handles all angle types (acute, obtuse, right).
 
-### 3. מה היה מאתגר בתרגיל?
+### 3. What was challenging in the exercise?
 
-- **ארכיטקטורה מודולרית**: חלוקה נכונה לקומפוננטות עם separation of concerns
-- **חישובי SVG מדויקים**: יצירת paths לקשתות עם הפרמטרים הנכונים
-- **עיצוב UX/UI מרשים**: יצירת חוויית משתמש חלקה עם אנימציות ומשוב ויזואלי
-- **TypeScript typing**: הגדרת interfaces נכונות לכל הנתונים
+- **Modular Architecture**: Proper component separation with separation of concerns
+- **Precise SVG Calculations**: Creating paths for arcs with correct parameters
+- **Impressive UX/UI Design**: Creating smooth user experience with animations and visual feedback
+- **TypeScript Typing**: Defining proper interfaces for all data types
 
-### 4. האם יש משהו שלא הצלחתי לפתור?
+### 4. Is there anything I couldn't solve? What gaps did I have?
 
-הפתרון מלא ועובד מצוין! הוספתי גם:
+The solution is complete and works excellently! I also added:
 
-- ✅ ולידציה שהנקודות יוצרות משולש תקין
-- ✅ אנימציות חלקות במעברים
-- ✅ תצוגת סכום הזוויות (180°)
-- ✅ עיצוב responsive
+- ✅ Validation that points form a valid triangle
+- ✅ Smooth transition animations
+- ✅ Angle sum display (180°)
+- ✅ Responsive design
 
-אם היה לי יותר זמן, הייתי מוסיף:
+If I had more time, I would add:
 
-- תמיכה במובייל עם touch events
-- אפשרות לגרור נקודות ב-canvas
-- חישוב אורכי צלעות וסוג המשולש
-- export ל-PNG/SVG
+- Mobile support with touch events
+- Drag and drop functionality for points on canvas
+- Side length calculations and triangle type identification
+- Export to PNG/SVG
 
-### 5. האם השתמשתי בעזרים חיצוניים?
+### 5. Did I use external aids (including AI)?
 
-**כן, השתמשתי ב:**
+**Yes, I used:**
 
-- **AI (Claude)** - לסיוע בארכיטקטורה, אופטימיזציה וbest practices
-- **MDN Documentation** - לתיעוד SVG paths
-- **React Docs** - לבדיקת Hooks ו-patterns
-- **Tailwind Docs** - לעיצוב מהיר
+- **AI (Claude)** - for assistance with architecture, optimization, and best practices
+- **MDN Documentation** - for SVG paths documentation
+- **React Docs** - for checking Hooks and patterns
+- **Tailwind Docs** - for quick styling
 
-**איך ה-AI עזר:**
+**How AI helped:**
 
-- תכנון מבנה הפרויקט המודולרי
-- אופטימיזציה של החישובים המתמטיים
-- יצירת עיצוב מודרני ומרשים
-- כתיבת קוד נקי עם TypeScript
-
----
-
-## 👨‍💻 **מחבר**
-
-פותח עבור משימת מיון ב-SmileCloud - Full-Stack Developer Position
-
-**זמן פיתוח:** שעה וחצי (כנדרש במשימה)
+- Planning the modular project structure
+- Optimizing mathematical calculations
+- Creating modern and impressive design
+- Writing clean code with TypeScript
 
 ---
 
-💡 **הערה:** האפליקציה זמינה לצפייה ישירה בלינק למעלה, ללא צורך בהתקנה או הרצה מקומית.
+## 👨‍💻 **Author**
+
+Developed for SmileCloud recruitment process - Full-Stack Developer Position
+
+**Development time:** 1.5 hours (as required in the assignment)
+
+---
+
+💡 **Note:** The application is available for direct viewing at the link above, no installation or local setup required.
