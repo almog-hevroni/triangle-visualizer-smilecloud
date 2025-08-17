@@ -14,7 +14,7 @@ To run the project locally:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/triangle-visualizer-smilecloud.git
+git clone https://github.com/almog-hevroni/triangle-visualizer-smilecloud.git
 
 # 2. Navigate to project directory
 cd triangle-visualizer-smilecloud
